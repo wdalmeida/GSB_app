@@ -1,6 +1,20 @@
 <resources>
     <string name="app_name">GSB</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="title_section1">Show drugs</string>
+    <string name="title_section2">Show instructions</string>
+    <string name="title_section3">Add a drug</string>
+    <string name="title_section4">Delete a drug</string>
+    <string name="title_section5">Update drug information</string>
+
+    <string name="medoc_compo">Composition : </string>
+    <string name="medoc_effet">Effet : </string>
+    <string name="medoc_contre">Contre Indication : </string>
+    <string name="medoc_prix">Prix : </string>
+    <string name="action_example">Example action</string>
+
     <string name="action_settings">Settings</string>
+    <string name="title_activity_show_medoc">ShowMedoc</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>
