@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GSB</string>
+
+    <string name="title_section1">Voir les médicaments</string>
+    <string name="title_section2">Voir les dosage</string>
+    <string name="title_section3">Ajouter un médicament</string>
+    <string name="title_section4">Supprimer un médicament</string>
+    <string name="title_section5">Mettre à jour un médicament</string>
+
+    <string name="action_example">Exemple d\'action</string>
+
+    <string name="action_settings">Paramètre</string>
+    <string name="title_home">Bienvenue sur l\'application de GSB</string>
+</resources>
