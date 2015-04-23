@@ -6,25 +6,23 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:scroll
     tools:context="com.example.warren.gsb.ajout_medoc">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edit_medoc_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText2"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/editText2"
+        android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="@string/medoc_id"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edit_medoc_nom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/edit_medoc_id"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:ems="10"
@@ -32,22 +30,21 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/edit_medoc_compo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/edit_medoc_nom"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:ems="10"
         android:hint="@string/medoc_compo"
         android:inputType="textMultiLine" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/edit_medoc_effet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText3"
+        android:layout_below="@+id/edit_medoc_contre"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:ems="10"
@@ -55,10 +52,10 @@
         android:inputType="textMultiLine" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/edit_medoc_contre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText4"
+        android:layout_below="@+id/edit_medoc_compo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:ems="10"
@@ -66,12 +63,11 @@
         android:inputType="textMultiLine" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/edit_medoc_prix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText5"
-        android:layout_alignStart="@+id/editText5"
-        android:layout_below="@+id/editText5"
+        android:layout_below="@+id/edit_medoc_effet"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:ems="10"
         android:hint="@string/medoc_prix"
@@ -81,8 +77,9 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/edit_medoc_prix"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
         android:text="@string/add_button" />
 
 </RelativeLayout>
