@@ -16,6 +16,7 @@ public class CreateBDD extends SQLiteOpenHelper {
     private static final String COL_EFFET = "MED_EFFETS";
     private static final String COL_CONTRE = "MED_CONTREINDIC";
     private static final String COL_PRIX = "MED_PRIXECHANTILLON";
+
     private static final String TABLE_TYPE = "TYPE_INDIVIDU";
     private static final String COL_LIBELLE = "TYPE_LIBELLE";
     private static final String COL_MIN = "TYPE_AGEMIN";
