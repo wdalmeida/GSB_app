@@ -10,19 +10,19 @@ import android.database.sqlite.SQLiteDatabase;
  */
 public class AdaptaterBDD {
 
+    public static final String COL_ID = "MED_DEPOTLEGAL";
+    public static final String COL_NOM = "MED_NOMCOMMERCIAL";
+    public static final String COL_COMP = "MED_COMPOSITION";
+    public static final String COL_EFFET = "MED_EFFETS";
+    public static final String COL_CONTRE = "MED_CONTREINDIC";
+    public static final String COL_PRIX = "MED_PRIXECHANTILLON";
     static final int VERSION_BDD = 1;
     static final String TABLE_MEDICAMENT = "MEDICAMENT";
-    static final String COL_ID = "MED_DEPOTLEGAL";
     static final int NUM_COL_ID = 0;
-    static final String COL_NOM = "MED_NOMCOMMERCIAL";
     static final int NUM_COL_NOM = 1;
-    static final String COL_COMP = "MED_COMPOSITION";
     static final int NUM_COL_COMP = 2;
-    static final String COL_EFFET = "MED_EFFETS";
     static final int NUM_COL_EFFET = 3;
-    static final String COL_CONTRE = "MED_CONTREINDIC";
     static final int NUM_COL_CONTRE = 4;
-    static final String COL_PRIX = "MED_PRIXECHANTILLON";
     static final int NUM_COL_PRIX = 5;
     private static final String NOM_BDD = "MEDICAMENT.db";
     private CreateBDD bdMedoc;

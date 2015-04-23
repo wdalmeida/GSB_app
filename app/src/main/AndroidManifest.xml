@@ -17,8 +17,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity_liste_medoc"
-            android:label="@string/title_activity_activity_liste_medoc"
+            android:name=".liste_medoc"
+            android:label="@string/title_activity_liste_medoc"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.warren.gsb.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ajout_medoc"
+            android:label="@string/title_activity_ajout_medoc"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

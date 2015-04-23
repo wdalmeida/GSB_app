@@ -1,0 +1,65 @@
+package com.example.warren.gsb;
+
+import android.database.Cursor;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
+
+import com.example.warren.gsb.bdd.AdaptaterBDD;
+
+
+public class liste_medoc extends ActionBarActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_liste_medoc);
+
+        ListView listViewMedicament = (ListView) findViewById(R.id.listMedoc);
+
+        AdaptaterBDD bdd = new AdaptaterBDD(this);
+        //On ouvre la base de données
+        bdd.open();
+        Cursor c = bdd.getData();
+        Toast.makeText(getApplicationContext(), "il y a " + String.valueOf(c.getCount()) + " articles dans la BD", Toast.LENGTH_LONG).show();
+        // colonnes à afficher
+        String[] columns = new String[]{AdaptaterBDD.COL_ID, AdaptaterBDD.COL_NOM, AdaptaterBDD.COL_COMP, AdaptaterBDD.COL_CONTRE, AdaptaterBDD.COL_EFFET, AdaptaterBDD.COL_PRIX};
+        // champs dans lesquelles afficher les colonnes
+        int[] to = new int[]{R.id.inutile, R.id.MedocName, R.id.text_MedocCompo, R.id.text_MedocContre, R.id.text_MedocEffet, R.id.textext_MedocPrix};
+// this : contexte (notre activité)
+// R.layout : vue
+//c : cursor
+//columns : nom des colonnes
+//to : contrôles
+        SimpleCursorAdapter dataAdapter = new SimpleCursorAdapter(this, R.layout.un_medoc, c, columns, to, 1);
+        // Assign adapter to ListView
+        listViewMedicament.setAdapter(dataAdapter);
+        bdd.close();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_activity_liste_medoc, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+}

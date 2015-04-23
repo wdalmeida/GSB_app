@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void showMedoc(View view) {
-        Intent intent = new Intent(this, activity_liste_medoc.class);
+        Intent intent = new Intent(this, liste_medoc.class);
         startActivity(intent);
     }
 
