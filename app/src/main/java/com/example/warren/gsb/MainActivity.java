@@ -50,6 +50,11 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void addMedoc(View view) {
+        Intent intent = new Intent(this, ajout_medoc.class);
+        startActivity(intent);
+    }
+
     public void testBd() {
         //Création d'une instance de la classe unArticlesBDD
         AdaptaterBDD bdd = new AdaptaterBDD(this);
