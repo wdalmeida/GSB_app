@@ -106,6 +106,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/edit_medoc_prix"
         android:layout_marginTop="43dp"
+        android:onClick="add"
         android:text="@string/add_button" />
 
 </RelativeLayout>

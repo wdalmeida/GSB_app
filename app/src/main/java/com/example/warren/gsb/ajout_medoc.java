@@ -4,6 +4,12 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.warren.gsb.bdd.AdaptaterBDD;
+import com.example.warren.gsb.bdd.Medicament;
 
 
 public class ajout_medoc extends ActionBarActivity {
@@ -34,5 +40,22 @@ public class ajout_medoc extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void add(View view) {
+        AdaptaterBDD bdd = new AdaptaterBDD(this);
+        bdd.open();
+        EditText id = (EditText) findViewById(R.id.edit_medoc_id);
+        EditText nom = (EditText) findViewById(R.id.edit_medoc_nom);
+        EditText compo = (EditText) findViewById(R.id.edit_medoc_compo);
+        EditText contre = (EditText) findViewById(R.id.edit_medoc_contre);
+        EditText effet = (EditText) findViewById(R.id.edit_medoc_effet);
+        EditText prix = (EditText) findViewById(R.id.edit_medoc_prix);
+
+        Medicament unMedoc = bdd.getMedicamentByName(nom.getText().toString());
+        if (unMedoc != null)
+            Toast.makeText(this, "Médicament :" + unMedoc.getNom() + " ajouté", Toast.LENGTH_LONG).show();
+        else
+            Toast.makeText(this, "Erreur le médicament :" + unMedoc.getNom() + " n'a pas été ajouté.\nUn médicament porte déjà ce nom", Toast.LENGTH_LONG).show();
     }
 }
