@@ -17,4 +17,5 @@
     <string name="title_activity_show_medoc">ShowMedoc</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_activity_liste_medoc">activity_liste_medoc</string>
 </resources>
