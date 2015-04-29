@@ -51,11 +51,9 @@ public class ajout_medoc extends ActionBarActivity {
         EditText contre = (EditText) findViewById(R.id.edit_medoc_contre);
         EditText effet = (EditText) findViewById(R.id.edit_medoc_effet);
         EditText prix = (EditText) findViewById(R.id.edit_medoc_prix);
-
-        Medicament unMedoc = bdd.getMedicamentByName(nom.getText().toString());
-        if (unMedoc != null)
-            Toast.makeText(this, "Médicament :" + unMedoc.getNom() + " ajouté", Toast.LENGTH_LONG).show();
-        else
-            Toast.makeText(this, "Erreur le médicament :" + unMedoc.getNom() + " n'a pas été ajouté.\nUn médicament porte déjà ce nom", Toast.LENGTH_LONG).show();
+        Medicament leMedoc = new Medicament(id.getText().toString(), nom.getText().toString(), compo.getText().toString(),
+                contre.getText().toString(), effet.getText().toString(), prix.getText().toString());
+        bdd.insererMedicament(leMedoc);
+        Toast.makeText(this, "Médicament :" + leMedoc.getNom() + " ajouté", Toast.LENGTH_LONG).show();
     }
 }
