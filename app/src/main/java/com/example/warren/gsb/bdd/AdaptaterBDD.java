@@ -63,7 +63,8 @@ public class AdaptaterBDD {
         return db.insert(TABLE_MEDICAMENT, null, values);
     }
 
-    private Medicament cursorToArticle(Cursor c) { //Cette méthode permet de convertir un cursor en un article
+    private Medicament cursorToMedicament(Cursor c) {
+        //Cette méthode permet de convertir un cursor en un article
         //si aucun élément n'a été retourné dans la requête, on renvoie null
         if (c.getCount() == 0)
             return null;
@@ -84,7 +85,7 @@ public class AdaptaterBDD {
     public Medicament getMedicamentByName(String nom) {
         //Récupère dans un Cursor les valeurs correspondant à un article grâce à sa designation)
         Cursor c = db.query(TABLE_MEDICAMENT, new String[]{COL_ID, COL_NOM, COL_COMP, COL_EFFET, COL_CONTRE, COL_PRIX}, COL_NOM + " LIKE \"" + nom + "\"", null, null, null, null);
-        return cursorToArticle(c);
+        return cursorToMedicament(c);
     }
 
     public int updateMedicament(String id, Medicament unMedicament) {

@@ -28,15 +28,15 @@ public class CreateBDD extends SQLiteOpenHelper {
     private static final String COL_DUREE = "D_DUREE";
 
     private static final String CREATE_BDD =
-            "CREATE TABLE " + TABLE_MEDICAMENTS + " (" + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                    + COL_NOM + " TEXT NOT NULL, " + COL_COMP + " TEXT NOT NULL, "
-                    + COL_EFFET + " TEXT NOT NULL," + COL_CONTRE + " TEXT NOT NULL," + COL_PRIX + " TEXT NOT NULL);"
+            "CREATE TABLE " + TABLE_MEDICAMENTS + " (" + COL_ID + " TEXT(256) PRIMARY KEY,"
+                    + COL_NOM + " TEXT(256) NOT NULL, " + COL_COMP + " TEXT(256) NOT NULL, "
+                    + COL_EFFET + " TEXT(256) NOT NULL," + COL_CONTRE + " TEXT(256) NOT NULL," + COL_PRIX + " TEXT(256) NOT NULL);"
 
-                    + "CREATE TABLE " + TABLE_TYPE + " (" + COL_CODE + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                    + COL_LIBELLE + " TEXT NOT NULL," + COL_MIN + "TEXT NOT NULL," + COL_MAX + "TEXT NOT NULL);"
+                    + "CREATE TABLE " + TABLE_TYPE + " (" + COL_CODE + " TEXT(256) PRIMARY KEY,"
+                    + COL_LIBELLE + " TEXT(256) NOT NULL," + COL_MIN + "TEXT(256) NOT NULL," + COL_MAX + "TEXT(256) NOT NULL);"
 
-                    + "CREATE TABLE " + TABLE_DOSAGE + "(" + COL_QTE + "TEXT NOT NULL," + COL_UNITE + "TEXT NOT NULL,"
-                    + COL_DUREE + "TEXT NOT NULL);";
+                    + "CREATE TABLE " + TABLE_DOSAGE + "(" + COL_QTE + "TEXT(256) NOT NULL," + COL_UNITE + "TEXT(256) NOT NULL,"
+                    + COL_DUREE + "TEXT(256) NOT NULL);";
 
     public CreateBDD(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
