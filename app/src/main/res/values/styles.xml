@@ -4,5 +4,5 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
-
+    <!-- TODO fond bleu et ecriture en blanc -->
 </resources>

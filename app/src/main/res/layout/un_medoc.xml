@@ -8,7 +8,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/MedocCompo"
@@ -23,8 +25,9 @@
         android:id="@+id/text_MedocCompo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/MedocName"
-        android:layout_toEndOf="@+id/MedocCompo"
         android:layout_toRightOf="@+id/MedocCompo" />
 
     <TextView
@@ -34,13 +37,17 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/MedocCompo"
+        android:layout_marginTop="50dp"
         android:text="@string/medoc_effet" />
 
     <TextView
         android:id="@+id/text_MedocEffet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/MedocCompo"
+        android:layout_above="@+id/MedocContre"
+        android:layout_alignEnd="@+id/text_MedocCompo"
+        android:layout_alignRight="@+id/text_MedocCompo"
+        android:layout_alignTop="@+id/MedocEffet"
         android:layout_toEndOf="@+id/MedocEffet"
         android:layout_toRightOf="@+id/MedocEffet" />
 
@@ -51,14 +58,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/MedocEffet"
+        android:layout_marginTop="50dp"
         android:text="@string/medoc_contre" />
 
     <TextView
         android:id="@+id/text_MedocContre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/MedocContre"
-        android:layout_toEndOf="@+id/MedocContre"
         android:layout_toRightOf="@+id/MedocContre" />
 
     <TextView
@@ -68,20 +77,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/MedocContre"
+        android:layout_marginTop="30dp"
         android:text="@string/medoc_prix" />
 
     <TextView
-        android:id="@+id/textext_MedocPrix"
+        android:id="@+id/text_MedocPrix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/text_MedocContre"
+        android:layout_alignRight="@+id/text_MedocContre"
         android:layout_alignTop="@+id/MedocPrix"
-        android:layout_toEndOf="@+id/MedocPrix"
         android:layout_toRightOf="@+id/MedocPrix" />
-
-    <TextView
-        android:id="@+id/inutile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
 </RelativeLayout>

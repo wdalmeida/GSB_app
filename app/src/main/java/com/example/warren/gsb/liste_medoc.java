@@ -27,9 +27,9 @@ public class liste_medoc extends ActionBarActivity {
         Cursor c = bdd.getData();
         Toast.makeText(getApplicationContext(), "il y a " + String.valueOf(c.getCount()) + " articles dans la BD", Toast.LENGTH_LONG).show();
         // colonnes à afficher
-        String[] columns = new String[]{AdaptaterBDD.COL_ID, AdaptaterBDD.COL_NOM, AdaptaterBDD.COL_COMP, AdaptaterBDD.COL_CONTRE, AdaptaterBDD.COL_EFFET, AdaptaterBDD.COL_PRIX};
+        String[] columns = new String[]{AdaptaterBDD.COL_NOM, AdaptaterBDD.COL_COMP, AdaptaterBDD.COL_CONTRE, AdaptaterBDD.COL_EFFET, AdaptaterBDD.COL_PRIX};
         // champs dans lesquelles afficher les colonnes
-        int[] to = new int[]{R.id.inutile, R.id.MedocName, R.id.text_MedocCompo, R.id.text_MedocContre, R.id.text_MedocEffet, R.id.textext_MedocPrix};
+        int[] to = new int[]{R.id.MedocName, R.id.text_MedocCompo, R.id.text_MedocContre, R.id.text_MedocEffet, R.id.text_MedocPrix};
 // this : contexte (notre activité)
 // R.layout : vue
 //c : cursor
