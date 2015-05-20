@@ -25,8 +25,8 @@ public class AdaptaterBDD {
     static final int NUM_COL_CONTRE = 4;
     static final int NUM_COL_PRIX = 5;
     private static final String NOM_BDD = "MEDICAMENT.db";
+    protected Context context;
     private CreateBDD bdMedoc;
-    private Context context;
     private SQLiteDatabase db;
 
     public AdaptaterBDD(Context context) {
