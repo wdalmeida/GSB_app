@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.warren.gsb.bdd.AdaptaterBDD;
 import com.example.warren.gsb.bdd.Medicament;
@@ -17,6 +18,13 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ImageView image = new ImageView(this);
+        //getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_USE_LOGO);
+        //getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setIcon(R.drawable.logo);
+
         if (!testBd())
         remplirBDD();
     }

@@ -24,5 +24,6 @@
     <string name="medoc_nom">Nom :</string>
     <string name="title_activity_ajout_medoc">Ajouter un medicament</string>
     <string name="add_button">Ajouter</string>
+    <string name="action_infos">Informations pratiques</string>
 
 </resources>

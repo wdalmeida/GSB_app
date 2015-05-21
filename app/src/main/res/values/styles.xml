@@ -1,8 +1,37 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
+        <item name="android:actionMenuTextColor">@color/HotPink</item>
+
+        <item name="android:windowActionBarOverlay">false</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="actionMenuTextColor">@color/LimeGreen</item>
+
+        <item name="windowActionBarOverlay">true</item>
+
     </style>
-    <!-- TODO fond bleu et ecriture en blanc -->
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">#997812</item>
+
+        <!-- Support library compatibility-->
+        <item name="background">@color/GSB</item>
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
+
+    </style>
+
+    <!-- ActionBar title text-->
+    <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/White</item>
+        <!-- The textColor property is backward compatible with the Support Library -->
+        <item name="color">@color/HotPink</item>
+    </style>
+
+
 </resources>

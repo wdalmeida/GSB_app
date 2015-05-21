@@ -20,6 +20,9 @@ public class liste_medoc extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_medoc);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 
         ListView listViewMedicament = (ListView) findViewById(R.id.listMedoc);
 

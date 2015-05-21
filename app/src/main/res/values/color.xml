@@ -401,4 +401,7 @@
     <color name="SeaShell">#FFF5EE</color>
     <color name="MilkWhite">#FEFCFF</color>
     <color name="White">#FFFFFF</color>
+
+    <color name="GSB1">#5599EE</color>
+    <color name="GSB">#7B9DCA</color>
 </resources>
