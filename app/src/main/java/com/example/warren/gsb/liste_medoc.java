@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.warren.gsb.bdd.AdaptaterBDD;
@@ -36,6 +38,18 @@ public class liste_medoc extends ActionBarActivity {
 //columns : nom des colonnes
 //to : contrôles
         SimpleCursorAdapter dataAdapter = new SimpleCursorAdapter(this, R.layout.un_medoc, c, columns, to, 1);
+        dataAdapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
+            @Override
+            public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
+                if (columnIndex == cursor.getColumnIndex(AdaptaterBDD.COL_PRIX)) {
+                    String prix = cursor.getString(columnIndex);
+                    TextView textView = (TextView) view;
+                    textView.setText(prix + "€");
+                    return true;
+                }
+                return false;
+            }
+        });
         // Assign adapter to ListView
         listViewMedicament.setAdapter(dataAdapter);
         bdd.close();

@@ -17,6 +17,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (!testBd())
         remplirBDD();
     }
 
@@ -52,7 +53,17 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    //TODO tester si la BDD est vide ou pas
+    public boolean testBd() {
+        AdaptaterBDD bdd = new AdaptaterBDD(this);
+        bdd.open();
+        boolean res = false;
+        if (bdd.getAllMedicament().getCount() > 0) {
+            res = true;
+        }
+        bdd.close();
+        return res;
+    }
+
     public void remplirBDD() {
         AdaptaterBDD bdd = new AdaptaterBDD(this);
         //génération automatique du prix à la création

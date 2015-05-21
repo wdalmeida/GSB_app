@@ -88,6 +88,10 @@ public class AdaptaterBDD {
         return cursorToMedicament(c);
     }
 
+    public Cursor getAllMedicament() {
+        return db.rawQuery("SELECT * FROM " + TABLE_MEDICAMENT, null);
+    }
+
     public int updateMedicament(String id, Medicament unMedicament) {
         //La mise à jour d'un article dans la BDD fonctionne plus ou moins comme une insertion
         //il faut simplement préciser quel article on doit mettre à jour grâce à sa référence
