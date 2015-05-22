@@ -23,7 +23,11 @@
     <string name="title_home">Welcome in GSB app</string>
     <string name="title_activity_ajout_medoc">Add a drug</string>
     <string name="add_button">Add</string>
-    <string name="title_activity_dosage">dosage</string>
+    <string name="title_activity_dosage">Instruction</string>
     <string name="action_infos">Useful information</string>
+    <string name="choix_medoc">Select a drug :</string>
+    <string name="choix_indiv">Select a type :</string>
+    <string name="button_dosage">See instruction</string>
+    <string name="title_activity_voir_dosage">Voir_dosage</string>
 
 </resources>

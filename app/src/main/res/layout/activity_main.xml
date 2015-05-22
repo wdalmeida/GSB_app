@@ -37,6 +37,7 @@
         android:layout_below="@+id/button"
         android:layout_marginTop="50dp"
         android:width="200dp"
+        android:onClick="showDrug"
         android:text="@string/title_section2" />
 
     <Button
@@ -50,14 +51,14 @@
         android:onClick="addMedoc"
         android:text="@string/title_section3" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:width="200dp"
-        android:text="@string/title_section4" />
+    <!-- <Button
+         android:id="@+id/button4"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/button3"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="50dp"
+         android:width="200dp"
+         android:text="@string/title_section4" />-->
 
 </RelativeLayout>

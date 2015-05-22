@@ -12,7 +12,7 @@ import com.example.warren.gsb.bdd.AdaptaterBDD;
 import com.example.warren.gsb.bdd.Medicament;
 
 
-public class ajout_medoc extends ActionBarActivity {
+public class Ajout_medoc extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

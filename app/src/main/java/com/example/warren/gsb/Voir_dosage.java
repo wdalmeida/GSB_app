@@ -6,21 +6,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class dosage extends ActionBarActivity {
+public class Voir_dosage extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dosage);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-
+        setContentView(R.layout.activity_voir_dosage);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_dosage, menu);
+        getMenuInflater().inflate(R.menu.menu_voir_dosage, menu);
         return true;
     }
 

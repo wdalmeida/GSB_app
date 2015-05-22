@@ -16,7 +16,10 @@ public class AdaptaterBDD {
     public static final String COL_EFFET = "MED_EFFETS";
     public static final String COL_CONTRE = "MED_CONTREINDIC";
     public static final String COL_PRIX = "MED_PRIXECHANTILLON";
-    static final int VERSION_BDD = 1;
+    public static final String COL_CODE = "TYPE_CODE";
+    public static final String COL_LIBELLE = "TYPE_LIBELLE";
+    public static final String COL_MIN = "TYPE_AGEMIN";
+    public static final String COL_MAX = "TYPE_AGEMAX";
     static final String TABLE_MEDICAMENT = "MEDICAMENT";
     static final int NUM_COL_ID = 0;
     static final int NUM_COL_NOM = 1;
@@ -24,7 +27,15 @@ public class AdaptaterBDD {
     static final int NUM_COL_EFFET = 3;
     static final int NUM_COL_CONTRE = 4;
     static final int NUM_COL_PRIX = 5;
-    private static final String NOM_BDD = "MEDICAMENT.db";
+    static final String TABLE_INDIVIDU = "TYPE_INDIVIDU";
+    static final int NUM_COL_CODE = 0;
+    static final int NUM_COL_LIBELLE = 1;
+    static final int NUM_COL_MIN = 2;
+    static final int NUM_COL_MAX = 3;
+
+
+    static final int VERSION_BDD = 1;
+    private static final String NOM_BDD = "GSB.db";
     protected Context context;
     private CreateBDD bdMedoc;
     private SQLiteDatabase db;
@@ -82,14 +93,12 @@ public class AdaptaterBDD {
         return unMedoc;    //On retourne l'article
     }
 
-    public Medicament getMedicamentByName(String nom) {
-        //Récupère dans un Cursor les valeurs correspondant à un article grâce à sa designation)
-        Cursor c = db.query(TABLE_MEDICAMENT, new String[]{COL_ID, COL_NOM, COL_COMP, COL_EFFET, COL_CONTRE, COL_PRIX}, COL_NOM + " LIKE \"" + nom + "\"", null, null, null, null);
-        return cursorToMedicament(c);
+    public Cursor getAllMedicament() {
+        return db.rawQuery("SELECT rowid _id, * FROM " + TABLE_MEDICAMENT, null);
     }
 
-    public Cursor getAllMedicament() {
-        return db.rawQuery("SELECT * FROM " + TABLE_MEDICAMENT, null);
+    public Cursor getAllIndividu() {
+        return db.rawQuery("SELECT rowid _id, * FROM " + TABLE_INDIVIDU, null);
     }
 
     public int updateMedicament(String id, Medicament unMedicament) {
@@ -107,7 +116,4 @@ public class AdaptaterBDD {
         return db.delete(TABLE_MEDICAMENT, COL_ID + " = \"" + id + "\"", null);
     }
 
-    public Cursor getData() {
-        return db.rawQuery("SELECT rowid _id, * FROM MEDICAMENT", null);
-    }
 }

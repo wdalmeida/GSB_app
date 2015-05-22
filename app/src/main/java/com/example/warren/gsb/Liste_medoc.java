@@ -14,14 +14,14 @@ import android.widget.Toast;
 import com.example.warren.gsb.bdd.AdaptaterBDD;
 
 
-public class liste_medoc extends ActionBarActivity {
+public class Liste_medoc extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_medoc);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
 
         ListView listViewMedicament = (ListView) findViewById(R.id.listMedoc);
@@ -29,7 +29,7 @@ public class liste_medoc extends ActionBarActivity {
         AdaptaterBDD bdd = new AdaptaterBDD(this);
         //On ouvre la base de données
         bdd.open();
-        Cursor c = bdd.getData();
+        Cursor c = bdd.getAllMedicament();
         Toast.makeText(getApplicationContext(), "il y a " + String.valueOf(c.getCount()) + " articles dans la BDD", Toast.LENGTH_LONG).show();
         // colonnes à afficher
         String[] columns = new String[]{AdaptaterBDD.COL_NOM, AdaptaterBDD.COL_COMP, AdaptaterBDD.COL_CONTRE, AdaptaterBDD.COL_EFFET, AdaptaterBDD.COL_PRIX};

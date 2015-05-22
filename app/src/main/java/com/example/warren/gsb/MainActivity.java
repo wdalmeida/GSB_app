@@ -42,12 +42,17 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void showMedoc(View view) {
-        Intent intent = new Intent(this, liste_medoc.class);
+        Intent intent = new Intent(this, Liste_medoc.class);
         startActivity(intent);
     }
 
     public void addMedoc(View view) {
-        Intent intent = new Intent(this, ajout_medoc.class);
+        Intent intent = new Intent(this, Ajout_medoc.class);
+        startActivity(intent);
+    }
+
+    public void showDrug(View view) {
+        Intent intent = new Intent(this, Form_dosage.class);
         startActivity(intent);
     }
 }

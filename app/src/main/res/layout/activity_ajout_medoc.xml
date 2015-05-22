@@ -11,7 +11,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="?android:attr/actionBarSize"
-    tools:context="com.example.warren.gsb.ajout_medoc">
+        tools:context="com.example.warren.gsb.Ajout_medoc">
 
     <EditText
         android:id="@+id/edit_medoc_id"

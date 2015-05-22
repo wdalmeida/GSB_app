@@ -3,7 +3,7 @@
     <string name="app_name">GSB</string>
 
     <string name="title_section1">Voir les médicaments</string>
-    <string name="title_section2">Voir les dosage</string>
+    <string name="title_section2">Voir un dosage</string>
     <string name="title_section3">Ajouter un médicament</string>
     <string name="title_section4">Supprimer un médicament</string>
     <string name="title_section5">Mettre à jour un médicament</string>
@@ -25,5 +25,9 @@
     <string name="title_activity_ajout_medoc">Ajouter un medicament</string>
     <string name="add_button">Ajouter</string>
     <string name="action_infos">Informations pratiques</string>
+    <string name="title_activity_dosage">Dosage</string>
+    <string name="choix_medoc">Sélectionnez un médicament :</string>
+    <string name="choix_indiv">Sélectionnez un type :</string>
+    <string name="button_dosage">Voir le dosage</string>
 
 </resources>

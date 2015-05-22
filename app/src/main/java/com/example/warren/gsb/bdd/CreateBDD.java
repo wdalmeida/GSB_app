@@ -39,7 +39,8 @@ public class CreateBDD extends SQLiteOpenHelper {
                     + COL_QTE + " TEXT NOT NULL, " + COL_UNITE + " TEXT NOT NULL, " + COL_DUREE + " TEXT NOT NULL, PRIMARY KEY(" + COL_ID + "," + COL_CODE + "));";
 
     private static final String INFO_TYPE =
-            "INSERT INTO " + TABLE_TYPE + " (" + COL_CODE + "," + COL_LIBELLE + "," + COL_MIN + "," + COL_MAX + ")" + " VALUES('JE','Nourrison, Bébé, Enfant, Adolescent','0','17'),('AD','Adultes','18','59'),('SE','Senior','60','99');";
+            "INSERT INTO " + TABLE_TYPE + " (" + COL_CODE + "," + COL_LIBELLE + "," + COL_MIN + "," + COL_MAX + ")" + " VALUES"
+                    + "('JE','Enfant','0','17'),('AD','Adultes','18','59'),('SE','Senior','60','99');";
 
     private static final String INFO_MEDOC =
             "INSERT INTO medicament (" + COL_ID + ", " + COL_NOM + ", " + COL_COMP + ", " + COL_EFFET + ", " + COL_CONTRE + ", " + COL_PRIX + ") VALUES"
@@ -85,7 +86,7 @@ public class CreateBDD extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_MEDOC);
         db.execSQL(CREATE_TABLE_INDIV);
         db.execSQL(CREATE_TABLE_DOSA);
-        System.out.print(INFO_MEDOC);
+
         db.execSQL(INFO_MEDOC);
         db.execSQL(INFO_TYPE);
         System.out.println("ON CREATE BD ARTICLE");
