@@ -82,6 +82,20 @@ public class AdaptaterBDD {
         return db.insert(TABLE_MEDICAMENT, null, values);
     }
 
+    public long insererDosage(Dosage unDosage) {
+        //Création d'un ContentValues (fonctionne comme une HashMap)
+        ContentValues values = new ContentValues();
+        //on lui ajoute une valeur associée à une clé (qui est le nom de la colonne où on veut mettre la valeur)
+        values.put(COL_ID, unDosage.getId_medoc());
+        values.put(COL_CODE, unDosage.getCode_indiv());
+        values.put(COL_QTE, unDosage.getQuantite());
+        values.put(COL_UNITE, unDosage.getUnité());
+        values.put(COL_DUREE, unDosage.getDurée());
+
+        //on insère l'objet dans la BDD via le ContentValues
+        return db.insert(TABLE_DOSAGE, null, values);
+    }
+
     private Medicament cursorToMedicament(Cursor c) {
         //Cette méthode permet de convertir un cursor en un article
         //si aucun élément n'a été retourné dans la requête, on renvoie null
@@ -107,6 +121,13 @@ public class AdaptaterBDD {
 
     public Cursor getAllIndividu() {
         return db.rawQuery("SELECT rowid _id, * FROM " + TABLE_INDIVIDU, null);
+    }
+
+    public Cursor getIndividuNonDosee(String medoc) {
+        return db.rawQuery("SELECT row _id, i." + COL_LIBELLE
+                + " FROM " + TABLE_DOSAGE + " d"
+                + " JOIN " + TABLE_INDIVIDU + " i ON i." + COL_CODE + "=d." + COL_CODE
+                + " WHERE " + COL_ID + "='" + medoc, null);
     }
 
     public Cursor getUnDosage(String idMedoc, String idIndiv) {

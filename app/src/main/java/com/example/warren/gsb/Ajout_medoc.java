@@ -1,5 +1,6 @@
 package com.example.warren.gsb;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -58,5 +59,15 @@ public class Ajout_medoc extends ActionBarActivity {
                 contre.getText().toString(), effet.getText().toString(), prix.getText().toString());
         bdd.insererMedicament(leMedoc);
         Toast.makeText(this, "Médicament :" + leMedoc.getNom() + " ajouté", Toast.LENGTH_LONG).show();
+        bdd.close();
+    }
+
+    public void next(View view) {
+        Intent intent = new Intent(this, Ajout_medoc2.class);
+        EditText id = (EditText) findViewById(R.id.edit_medoc_id);
+        EditText nom = (EditText) findViewById(R.id.edit_medoc_nom);
+        add(view);
+        intent.putExtra("Medicament", id.getText() + "/" + nom.getText());
+        startActivity(intent);
     }
 }

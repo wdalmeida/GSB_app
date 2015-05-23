@@ -29,5 +29,10 @@
     <string name="choix_indiv">Select a type :</string>
     <string name="button_dosage">See instruction</string>
     <string name="title_activity_voir_dosage">The instruction</string>
+    <string name="title_activity_ajout_medoc2">Add instruction</string>
+    <string name="TextButtonNext">Next</string>
+    <string name="quantite">Quantite :</string>
+    <string name="unite">Unit :</string>
+    <string name="duree">Frequence :</string>
 
 </resources>

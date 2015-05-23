@@ -30,5 +30,10 @@
     <string name="choix_indiv">Sélectionnez un type :</string>
     <string name="button_dosage">Voir le dosage</string>
     <string name="title_activity_voir_dosage">Le dosage</string>
+    <string name="TextButtonNext">Suivant</string>
+    <string name="title_activity_ajout_medoc2">Renseigner le dosage</string>
+    <string name="quantite">Quantité :</string>
+    <string name="unite">Unité :</string>
+    <string name="duree"> Durée :</string>
 
 </resources>
