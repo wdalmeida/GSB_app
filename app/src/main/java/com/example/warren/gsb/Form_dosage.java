@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.warren.gsb.bdd.AdaptaterBDD;
 
@@ -73,8 +75,17 @@ public class Form_dosage extends ActionBarActivity {
         spinner.setAdapter(dataAdapter);
     }
 
-    public void voirDosage() {
+    public void voirDosage(View view) {
         Intent intent = new Intent(this, Voir_dosage.class);
+        Spinner medoc = (Spinner) findViewById(R.id.spinner_medoc);
+        Spinner indiv = (Spinner) findViewById(R.id.spinner_indiv);
+        Cursor cursor1 = (Cursor) medoc.getSelectedItem();
+        Cursor cursor2 = (Cursor) indiv.getSelectedItem();
+        String idmedoc = cursor1.getString(cursor1.getColumnIndex(AdaptaterBDD.COL_ID));
+        String idindiv = cursor2.getString(cursor2.getColumnIndex(AdaptaterBDD.COL_CODE));
+        Toast.makeText(getApplicationContext(), idmedoc+"-----"+idindiv, Toast.LENGTH_LONG).show();
+        intent.putExtra("Medoc", idmedoc);
+        intent.putExtra("Indiv", idindiv);
         startActivity(intent);
 
     }

@@ -16,10 +16,16 @@ public class AdaptaterBDD {
     public static final String COL_EFFET = "MED_EFFETS";
     public static final String COL_CONTRE = "MED_CONTREINDIC";
     public static final String COL_PRIX = "MED_PRIXECHANTILLON";
+
     public static final String COL_CODE = "TYPE_CODE";
     public static final String COL_LIBELLE = "TYPE_LIBELLE";
     public static final String COL_MIN = "TYPE_AGEMIN";
     public static final String COL_MAX = "TYPE_AGEMAX";
+
+    public static final String COL_QTE = "D_QUANTIE";
+    public static final String COL_UNITE = "D_UNITE";
+    public static final String COL_DUREE = "D_DUREE";
+    public static final String TABLE_DOSAGE = "DOSAGE";
     static final String TABLE_MEDICAMENT = "MEDICAMENT";
     static final int NUM_COL_ID = 0;
     static final int NUM_COL_NOM = 1;
@@ -32,7 +38,9 @@ public class AdaptaterBDD {
     static final int NUM_COL_LIBELLE = 1;
     static final int NUM_COL_MIN = 2;
     static final int NUM_COL_MAX = 3;
-
+    static final int NUM_COL_QTE = 2;
+    static final int NUM_COL_UNITE = 3;
+    static final int NUM_COL_DUREE = 4;
 
     static final int VERSION_BDD = 1;
     private static final String NOM_BDD = "GSB.db";
@@ -99,6 +107,15 @@ public class AdaptaterBDD {
 
     public Cursor getAllIndividu() {
         return db.rawQuery("SELECT rowid _id, * FROM " + TABLE_INDIVIDU, null);
+    }
+
+    public Cursor getUnDosage(String idMedoc, String idIndiv) {
+        return db.rawQuery("SELECT m." + COL_NOM + ", i." + COL_LIBELLE
+                + ", " + COL_QTE + ", " + COL_UNITE + ", " + COL_DUREE
+                + " FROM " + TABLE_DOSAGE + " d"
+                + " JOIN " + TABLE_MEDICAMENT + " m ON m." + COL_ID + "=d." + COL_ID
+                + " JOIN " + TABLE_INDIVIDU + " i ON i." + COL_CODE + "=d." + COL_CODE
+                + " WHERE m." + COL_ID + "='" + idMedoc + "' AND d." + COL_CODE + "='" + idIndiv + "'", null);
     }
 
     public int updateMedicament(String id, Medicament unMedicament) {

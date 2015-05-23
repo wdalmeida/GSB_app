@@ -28,6 +28,6 @@
     <string name="choix_medoc">Select a drug :</string>
     <string name="choix_indiv">Select a type :</string>
     <string name="button_dosage">See instruction</string>
-    <string name="title_activity_voir_dosage">Voir_dosage</string>
+    <string name="title_activity_voir_dosage">The instruction</string>
 
 </resources>

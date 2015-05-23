@@ -43,7 +43,7 @@ public class CreateBDD extends SQLiteOpenHelper {
                     + "('JE','Enfant','0','17'),('AD','Adultes','18','59'),('SE','Senior','60','99');";
 
     private static final String INFO_MEDOC =
-            "INSERT INTO medicament (" + COL_ID + ", " + COL_NOM + ", " + COL_COMP + ", " + COL_EFFET + ", " + COL_CONTRE + ", " + COL_PRIX + ") VALUES"
+            "INSERT INTO " + TABLE_MEDICAMENTS + " (" + COL_ID + ", " + COL_NOM + ", " + COL_COMP + ", " + COL_EFFET + ", " + COL_CONTRE + ", " + COL_PRIX + ") VALUES"
                     + "('3MYC7', 'TRIMYCINE', 'Triamcinolone (acétonide) + Néomycine + Nystatine', 'Ce médicament est un corticoïde à  activité forte ou très forte associé à  un antibiotique et un antifongique, utilisé en application locale dans certaines atteintes cutanées surinfectées.', 'Ce médicament est contre-indiqué en cas d''allergie à  l''un des constituants, d''infections de la peau ou de parasitisme non traités, d''acné. Ne pas appliquer sur une plaie, ni sous un pansement occlusif.', 18),"
                     + "('ADIMOL9', 'ADIMOL', 'Amoxicilline + Acide clavulanique', 'Ce médicament, plus puissant que les pénicillines simples, est utilisé pour traiter des infections bactériennes spécifiques.', 'Ce médicament est contre-indiqué en cas d''allergie aux pénicillines ou aux céphalosporines.', 44),"
                     + "('AMOPIL7', 'AMOPIL', 'Amoxicilline', 'Ce médicament, plus puissant que les pénicillines simples, est utilisé pour traiter des infections bactériennes spécifiques.', 'Ce médicament est contre-indiqué en cas d''allergie aux pénicillines. Il doit être administré avec prudence en cas d''allergie aux céphalosporines.', 2),"
@@ -74,6 +74,93 @@ public class CreateBDD extends SQLiteOpenHelper {
                     + "('URIEG6', 'URIREGUL', 'Fosfomycine trométamol', 'Ce médicament est utilisé pour traiter les infections urinaires simples chez la femme de moins de 65 ans.', 'La prise de ce médicament est contre-indiquée en cas d''allergie à  l''un des constituants et d''insuffisance rénale.', 50);";
 
 
+    private static final String INFO_DOSAGE =
+            "INSERT INTO " + TABLE_DOSAGE + " (" + COL_ID + "," + COL_CODE + "," + COL_QTE + "," + COL_UNITE + "," + COL_DUREE + ")" + " VALUES"
+                    + "('3MYC7','JE',1,200,30),"
+                    + "('ADIMOL9','JE',2,100,45),"
+                    + "('AMOPIL7','JE',3,1000,12),"
+                    + "('AMOX45','JE',4,500,6),"
+                    + "('AMOXIG12','JE',5,500,14),"
+                    + "('APATOUX22','JE',6,500,23),"
+                    + "('BACTIG10','JE',7,500,4),"
+                    + "('BACTIV13','JE',8,200,5),"
+                    + "('BITALV','JE',9,200,2),"
+                    + "('CARTION6','JE',10,500,45),"
+                    + "('CLAZER6','JE',1,100,90),"
+                    + "('DEPRIL9','JE',2,100,3),"
+                    + "('DIMIRTAM6','JE',3,500,9),"
+                    + "('DOLRIL7','JE',4,1000,10),"
+                    + "('DORNOM8','JE',5,1000,10),"
+                    + "('EQUILARX6','JE',6,1000,15),"
+                    + "('EVILR7','JE',7,500,15),"
+                    + "('INSXT5','JE',8,50,7),"
+                    + "('JOVAI8','JE',9,50,7),"
+                    + "('LIDOXY23','JE',10,50,180),"
+                    + "('LITHOR12','JE',11,500,20),"
+                    + "('PARMOL16','JE',12,250,5),"
+                    + "('PHYSOI8','JE',13,250,4),"
+                    + "('PIRIZ8','JE',14,250,2),"
+                    + "('POMDI20','JE',15,500,3),"
+                    + "('TROXT21','JE',16,750,4),"
+                    + "('TXISOL22','JE',17,750,8),"
+                    + "('URIEG6','JE',18,750,7),"
+                    + "('3MYC7','AD',1,400,30),"
+                    + "('ADIMOL9','AD',2,200,45),"
+                    + "('AMOPIL7','AD',3,2000,12),"
+                    + "('AMOX45','AD',4,1000,6),"
+                    + "('AMOXIG12','AD',5,1000,14),"
+                    + "('APATOUX22','AD',6,1000,23),"
+                    + "('BACTIG10','AD',7,1000,4),"
+                    + "('BACTIV13','AD',8,400,5),"
+                    + "('BITALV','AD',9,400,2),"
+                    + "('CARTION6','AD',10,1000,45),"
+                    + "('CLAZER6','AD',1,200,90),"
+                    + "('DEPRIL9','AD',2,200,3),"
+                    + "('DIMIRTAM6','AD',3,1000,9),"
+                    + "('DOLRIL7','AD',4,2000,10),"
+                    + "('DORNOM8','AD',5,2000,10),"
+                    + "('EQUILARX6','AD',6,2000,15),"
+                    + "('EVILR7','AD',7,1000,15),"
+                    + "('INSXT5','AD',8,100,7),"
+                    + "('JOVAI8','AD',9,100,7),"
+                    + "('LIDOXY23','AD',10,100,180),"
+                    + "('LITHOR12','AD',11,1000,20),"
+                    + "('PARMOL16','AD',12,500,5),"
+                    + "('PHYSOI8','AD',13,500,4),"
+                    + "('PIRIZ8','AD',14,500,2),"
+                    + "('POMDI20','AD',15,500,3),"
+                    + "('TROXT21','AD',16,1500,4),"
+                    + "('TXISOL22','AD',17,1500,8),"
+                    + "('URIEG6','AD',18,1500,7),"
+                    + "('3MYC7','SE',2,200,30),"
+                    + "('ADIMOL9','SE',4,100,45),"
+                    + "('AMOPIL7','SE',6,1000,12),"
+                    + "('AMOX45','SE',8,500,6),"
+                    + "('AMOXIG12','SE',10,500,14),"
+                    + "('APATOUX22','SE',12,500,23),"
+                    + "('BACTIG10','SE',14,500,4),"
+                    + "('BACTIV13','SE',16,200,5),"
+                    + "('BITALV','SE',18,200,2),"
+                    + "('CARTION6','SE',20,500,45),"
+                    + "('CLAZER6','SE',2,100,90),"
+                    + "('DEPRIL9','SE',4,100,3),"
+                    + "('DIMIRTAM6','SE',6,500,9),"
+                    + "('DOLRIL7','SE',8,1000,10),"
+                    + "('DORNOM8','SE',10,1000,10),"
+                    + "('EQUILARX6','SE',12,1000,15),"
+                    + "('EVILR7','SE',14,500,15),"
+                    + "('INSXT5','SE',16,50,7),"
+                    + "('JOVAI8','SE',18,50,7),"
+                    + "('LIDOXY23','SE',20,50,180),"
+                    + "('LITHOR12','SE',22,500,20),"
+                    + "('PARMOL16','SE',24,250,5),"
+                    + "('PHYSOI8','SE',26,250,4),"
+                    + "('PIRIZ8','SE',28,250,2),"
+                    + "('POMDI20','SE',30,500,3),"
+                    + "('TROXT21','SE',32,750,4),"
+                    + "('TXISOL22','SE',34,750,8),"
+                    + "('URIEG6','SE',36,750,7);";
+
     public CreateBDD(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
 
@@ -89,6 +176,7 @@ public class CreateBDD extends SQLiteOpenHelper {
 
         db.execSQL(INFO_MEDOC);
         db.execSQL(INFO_TYPE);
+        db.execSQL(INFO_DOSAGE);
         System.out.println("ON CREATE BD ARTICLE");
 
     }

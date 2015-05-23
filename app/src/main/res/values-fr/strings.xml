@@ -29,5 +29,6 @@
     <string name="choix_medoc">Sélectionnez un médicament :</string>
     <string name="choix_indiv">Sélectionnez un type :</string>
     <string name="button_dosage">Voir le dosage</string>
+    <string name="title_activity_voir_dosage">Le dosage</string>
 
 </resources>

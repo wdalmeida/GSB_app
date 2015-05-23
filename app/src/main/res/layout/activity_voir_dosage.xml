@@ -9,8 +9,11 @@
     tools:context="com.example.warren.gsb.Voir_dosage">
 
     <TextView
+        android:id="@+id/text_dos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_centerInParent="true"
+        android:textSize="25sp"/>
+
 
 </RelativeLayout>

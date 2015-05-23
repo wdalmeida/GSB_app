@@ -49,5 +49,6 @@
         android:layout_below="@+id/spinner_indiv"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="49dp"
+        android:onClick="voirDosage"
         android:text="@string/button_dosage" />
 </RelativeLayout>
