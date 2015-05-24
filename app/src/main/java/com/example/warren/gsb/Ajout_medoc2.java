@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.warren.gsb.bdd.AdaptaterBDD;
 import com.example.warren.gsb.bdd.Dosage;
@@ -25,9 +27,10 @@ public class Ajout_medoc2 extends ActionBarActivity {
         Intent intent = getIntent();
         String info = intent.getStringExtra("Medicament");
         String[] split = info.split("/");
-        TextView nom = (TextView) findViewById(R.id.TextNom);
+        TextView nom = (TextView) findViewById(R.id.textView2);
         nom.setText(split[1]);
         chargerSpinner();
+        //TODO ajouter une ligne par défaut au spinner ex : selectionner
     }
 
     @Override
@@ -60,7 +63,7 @@ public class Ajout_medoc2 extends ActionBarActivity {
 
         String[] from = new String[]{AdaptaterBDD.COL_LIBELLE};
         int[] to = new int[]{R.id.nom_medoc};
-        SimpleCursorAdapter dataAdapter = new SimpleCursorAdapter(this, R.layout.row_spinner_medoc, c, from, to, 1);
+        SimpleCursorAdapter dataAdapter = new SimpleCursorAdapter(this, R.layout.row_spinner, c, from, to, 1);
 
         // Assign adapter to spinne
         spinner.setAdapter(dataAdapter);
@@ -68,21 +71,58 @@ public class Ajout_medoc2 extends ActionBarActivity {
     }
 
     public void addDosage(View view) {
-        Intent intent = getIntent();
-        AdaptaterBDD bdd = new AdaptaterBDD(this);
-        bdd.open();
+        if (!verifChamp()) {
+            Intent intent = getIntent();
+            AdaptaterBDD bdd = new AdaptaterBDD(this);
+            bdd.open();
+            EditText qte = (EditText) findViewById(R.id.editText);
+            EditText unite = (EditText) findViewById(R.id.editText2);
+            EditText duree = (EditText) findViewById(R.id.editText3);
+            Spinner spinner = (Spinner) findViewById(R.id.spinner_next);
+            Cursor cursor = (Cursor) spinner.getSelectedItem();
+            String id_indiv = cursor.getString(cursor.getColumnIndex(AdaptaterBDD.COL_CODE));
+
+            String info = intent.getStringExtra("Medicament");
+            String[] split = info.split("/");
+            String id_medoc = split[0];
+            Dosage leDosage = new Dosage(id_medoc, id_indiv, qte.getText().toString(), unite.getText().toString(), duree.getText().toString());
+            bdd.insererDosage(leDosage);
+            Toast.makeText(this, "Dosage enregistré", Toast.LENGTH_LONG).show();
+            bdd.close();
+        }
+    }
+
+    public boolean verifChamp() {
+        boolean verif = false;
         EditText qte = (EditText) findViewById(R.id.editText);
         EditText unite = (EditText) findViewById(R.id.editText2);
         EditText duree = (EditText) findViewById(R.id.editText3);
-        Spinner spinner = (Spinner) findViewById(R.id.spinner_next);
-        Cursor cursor = (Cursor) spinner.getSelectedItem();
-        String id_indiv = cursor.getString(cursor.getColumnIndex(AdaptaterBDD.COL_CODE));
+        //  List<EditText> editTextList = null;
+        if (TextUtils.isEmpty(qte.getText().toString())) {
+            qte.setError("Veuillez remplir ce champ");
+            verif = true;
+        }
+        if (TextUtils.isEmpty(unite.getText().toString())) {
+            unite.setError("Veuillez remplir ce champ");
+            verif = true;
+        }
+        if (TextUtils.isEmpty(duree.getText().toString())) {
+            duree.setError("Veuillez remplir ce champ");
+            verif = true;
+        }
 
-        String info = intent.getStringExtra("Medicament");
-        String[] split = info.split("/");
-        String id_medoc = split[0];
-        Dosage leDosage = new Dosage(id_medoc, id_indiv, qte.getText().toString(), unite.getText().toString(), duree.getText().toString());
-        bdd.insererDosage(leDosage);
-        bdd.close();
+        /*editTextList.add(id);
+        editTextList.add(nom);
+        editTextList.add(compo);
+        editTextList.add(contre);
+        editTextList.add(effet);
+        editTextList.add(prix);
+        for( EditText edit : editTextList) {
+            if(TextUtils.isEmpty(edit.getText().toString())){
+                edit.setError("Veuillez remplir ce champ");*/
+
+        // }
+        // }
+        return verif;
     }
 }

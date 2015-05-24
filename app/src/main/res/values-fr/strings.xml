@@ -11,7 +11,7 @@
     <string name="medoc_compo">Composition :</string>
     <string name="medoc_contre">Contre Indication :</string>
     <string name="medoc_effet">Effet :</string>
-    <string name="medoc_prix">Prix :</string>
+    <string name="medoc_prix">Prix : </string>
 
     <string name="action_example">Exemple d\'action</string>
     <string name="action_settings">Paramètre</string>

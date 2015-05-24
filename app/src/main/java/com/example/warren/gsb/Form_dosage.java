@@ -22,7 +22,7 @@ public class Form_dosage extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
-
+//TODO ajouter une ligne par défaut au spinner ex : selectionner
         AdaptaterBDD bdd = new AdaptaterBDD(this);
         bdd.open();
         spinnerMedoc(bdd);
@@ -58,7 +58,7 @@ public class Form_dosage extends ActionBarActivity {
 
         String[] from = new String[]{AdaptaterBDD.COL_NOM};
         int[] to = new int[]{R.id.nom_medoc};
-        SimpleCursorAdapter dataAdapter = new SimpleCursorAdapter(this, R.layout.row_spinner_medoc, c, from, to, 1);
+        SimpleCursorAdapter dataAdapter = new SimpleCursorAdapter(this, R.layout.row_spinner, c, from, to, 1);
         // Assign adapter to spinner
         spinner.setAdapter(dataAdapter);
     }
@@ -69,20 +69,22 @@ public class Form_dosage extends ActionBarActivity {
 
         String[] from = new String[]{AdaptaterBDD.COL_LIBELLE};
         int[] to = new int[]{R.id.nom_medoc};
-        SimpleCursorAdapter dataAdapter = new SimpleCursorAdapter(this, R.layout.row_spinner_medoc, c, from, to, 1);
+        SimpleCursorAdapter dataAdapter = new SimpleCursorAdapter(this, R.layout.row_spinner, c, from, to, 1);
         // Assign adapter to spinner
         spinner.setAdapter(dataAdapter);
     }
 
     public void voirDosage(View view) {
-        Intent intent = new Intent(this, Voir_dosage.class);
+
         Spinner medoc = (Spinner) findViewById(R.id.spinner_medoc);
         Spinner indiv = (Spinner) findViewById(R.id.spinner_indiv);
+//TODO Vérifier les spinner
         Cursor cursor1 = (Cursor) medoc.getSelectedItem();
         Cursor cursor2 = (Cursor) indiv.getSelectedItem();
         String idmedoc = cursor1.getString(cursor1.getColumnIndex(AdaptaterBDD.COL_ID));
         String idindiv = cursor2.getString(cursor2.getColumnIndex(AdaptaterBDD.COL_CODE));
 
+        Intent intent = new Intent(this, Voir_dosage.class);
         intent.putExtra("Medoc", idmedoc);
         intent.putExtra("Indiv", idindiv);
         startActivity(intent);

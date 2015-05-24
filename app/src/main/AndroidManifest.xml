@@ -51,7 +51,7 @@
         <activity
             android:name=".Ajout_medoc2"
             android:label="@string/title_activity_ajout_medoc2"
-            android:parentActivityName=".Ajout_medoc">
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.warren.gsb.Ajout_medoc" />

@@ -10,7 +10,7 @@
     <string name="medoc_compo">Composition : </string>
     <string name="medoc_effet">Effet : </string>
     <string name="medoc_contre">Contre Indication : </string>
-    <string name="medoc_prix">Price :</string>
+    <string name="medoc_prix">Price : </string>
     <string name="medoc_id">Identifiant : </string>
     <string name="medoc_nom">Name : </string>
 

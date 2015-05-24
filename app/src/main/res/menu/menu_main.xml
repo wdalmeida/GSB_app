@@ -6,10 +6,10 @@
         android:id="@+id/action_infos"
         android:orderInCategory="99"
         android:title="@string/action_infos"
-        app:showAsAction="never" />
-    <item
+        app:showAsAction="ifRoom" />
+    <!--<item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
+        app:showAsAction="never" />-->
 </menu>
