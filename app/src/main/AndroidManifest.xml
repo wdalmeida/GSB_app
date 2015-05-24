@@ -56,6 +56,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.warren.gsb.Ajout_medoc" />
         </activity>
+        <activity
+            android:name=".Infos"
+            android:label="@string/title_activity_infos">
+            android:parentActivityName=".MainActivity" >
+        </activity>
+        <activity
+            android:name=".Infos_dosage"
+            android:label="@string/title_activity_infos_dosage"
+            android:parentActivityName=".Form_dosage">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.warren.gsb.Form_dosage" />
+        </activity>
     </application>
 
 </manifest>

@@ -8,10 +8,10 @@
     <string name="title_section4">Supprimer un médicament</string>
     <string name="title_section5">Mettre à jour un médicament</string>
 
-    <string name="medoc_compo">Composition :</string>
-    <string name="medoc_contre">Contre Indication :</string>
-    <string name="medoc_effet">Effet :</string>
-    <string name="medoc_prix">Prix : </string>
+    <string name="medoc_compo">Composition :\u0020</string>
+    <string name="medoc_contre">Contre Indication :\u0020</string>
+    <string name="medoc_effet">Effet :\u0020</string>
+    <string name="medoc_prix">Prix :\u0020</string>
 
     <string name="action_example">Exemple d\'action</string>
     <string name="action_settings">Paramètre</string>
@@ -27,13 +27,20 @@
     <string name="action_infos">Informations pratiques</string>
     <string name="title_activity_dosage">Dosage</string>
     <string name="choix_medoc">Sélectionnez un médicament :</string>
-    <string name="choix_indiv">Sélectionnez un type :</string>
+    <string name="choix_indiv">Sélectionnez un type : </string>
     <string name="button_dosage">Voir le dosage</string>
     <string name="title_activity_voir_dosage">Le dosage</string>
     <string name="TextButtonNext">Suivant</string>
     <string name="title_activity_ajout_medoc2">Renseigner le dosage</string>
     <string name="quantite">Quantité :</string>
-    <string name="unite">Unité :</string>
+    <string name="unite">Unité : </string>
     <string name="duree"> Durée :</string>
+    <string name="medoc_compo_u"><u>Composition :</u>\u0020</string>
+    <string name="medoc_contre_u"><u>Contre Indication :</u></string>
+    <string name="medoc_effet_u"><u>Effet :</u>\u0020</string>
+    <string name="medoc_prix_u"><u>Prix :</u>\u0020</string>
+    <string name="info_indiv">Informations individu</string>
+    <string name="title_activity_infos">Informations pratiques</string>
+    <string name="title_activity_infos_dosage">Informations sur les dosages</string>
 
 </resources>

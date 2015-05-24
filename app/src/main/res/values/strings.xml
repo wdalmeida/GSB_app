@@ -7,11 +7,15 @@
     <string name="title_section4">Delete a drug</string>
     <string name="title_section5">Update drug information</string>
 
-    <string name="medoc_compo">Composition : </string>
-    <string name="medoc_effet">Effet : </string>
-    <string name="medoc_contre">Contre Indication : </string>
-    <string name="medoc_prix">Price : </string>
-    <string name="medoc_id">Identifiant : </string>
+    <string name="medoc_compo">Composition :\u0020 </string>
+    <string name="medoc_effet">Effet :\u0020 </string>
+    <string name="medoc_contre">Contre Indication :\u0020 </string>
+    <string name="medoc_prix">Price :\u0020 </string>
+    <string name="medoc_compo_u"><u>Composition :</u>\u0020 </string>
+    <string name="medoc_effet_u"><u>Effet :</u>\u0020 </string>
+    <string name="medoc_contre_u"><u>Contre Indication :</u>\u0020 </string>
+    <string name="medoc_prix_u"><u>Price :</u>\u0020 </string>
+    <string name="medoc_id">Identifiant :</string>
     <string name="medoc_nom">Name : </string>
 
     <string name="action_example">Example action</string>
@@ -25,14 +29,17 @@
     <string name="add_button">Add</string>
     <string name="title_activity_dosage">Instruction</string>
     <string name="action_infos">Useful information</string>
-    <string name="choix_medoc">Select a drug :</string>
-    <string name="choix_indiv">Select a type :</string>
+    <string name="choix_medoc">Select a drug : </string>
+    <string name="choix_indiv">Select a type : </string>
     <string name="button_dosage">See instruction</string>
     <string name="title_activity_voir_dosage">The instruction</string>
     <string name="title_activity_ajout_medoc2">Add instruction</string>
     <string name="TextButtonNext">Next</string>
     <string name="quantite">Quantite :</string>
-    <string name="unite">Unit :</string>
-    <string name="duree">Frequence :</string>
+    <string name="unite">Unit : </string>
+    <string name="duree">Frequence : </string>
+    <string name="info_indiv">type informations</string>
+    <string name="title_activity_infos">Useful Informations</string>
+    <string name="title_activity_infos_dosage">Instruction\'s Informations</string>
 
 </resources>

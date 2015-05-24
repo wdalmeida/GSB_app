@@ -124,10 +124,10 @@ public class AdaptaterBDD {
     }
 
     public Cursor getIndividuNonDosee(String medoc) {
-        return db.rawQuery("SELECT row _id, i." + COL_LIBELLE
-                + " FROM " + TABLE_DOSAGE + " d"
-                + " JOIN " + TABLE_INDIVIDU + " i ON i." + COL_CODE + "=d." + COL_CODE
-                + " WHERE " + COL_ID + "='" + medoc, null);
+        return db.rawQuery("SELECT rowid _id, " + COL_LIBELLE + ", " + COL_CODE
+                + " FROM " + TABLE_INDIVIDU
+                + " WHERE " + COL_CODE + " NOT IN ( SELECT " + COL_CODE + " FROM " + TABLE_DOSAGE
+                + " WHERE " + COL_ID + "='" + medoc + "');", null);
     }
 
     public Cursor getUnDosage(String idMedoc, String idIndiv) {

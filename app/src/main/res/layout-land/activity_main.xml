@@ -51,14 +51,14 @@
         android:onClick="addMedoc"
         android:text="@string/title_section3" />
 
-    <Button
+    <!--<Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/button3"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/button3"
         android:width="200dp"
-        android:text="@string/title_section4" />
+        android:text="@string/title_section4"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignStart="@+id/button3" />-->
 
 </RelativeLayout>

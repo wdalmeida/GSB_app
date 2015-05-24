@@ -18,14 +18,16 @@
         android:layout_marginTop="37dp"
         android:text="@string/choix_medoc"
         android:textIsSelectable="false"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <Spinner
         android:id="@+id/spinner_medoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/text_choix_indiv"
-        android:layout_alignRight="@+id/text_choix_indiv"
+        android:layout_alignEnd="@+id/spinner_indiv"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/spinner_indiv"
         android:layout_below="@+id/text_choix_medoc"
         android:spinnerMode="dropdown" />
 
@@ -36,19 +38,19 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/spinner_medoc"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="40dp"
         android:text="@string/choix_indiv"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <Spinner
         android:id="@+id/spinner_indiv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button_dosage"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button_dosage"
         android:layout_below="@+id/text_choix_indiv"
-        android:layout_toLeftOf="@+id/button_dosage"
-        android:layout_toStartOf="@+id/button_dosage"
         android:spinnerMode="dropdown" />
 
     <Button

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.SimpleCursorAdapter;
@@ -40,26 +39,14 @@ public class Ajout_medoc2 extends ActionBarActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     public void chargerSpinner() {
         AdaptaterBDD bdd = new AdaptaterBDD(this);
         bdd.open();
         Spinner spinner = (Spinner) findViewById(R.id.spinner_next);
-        Cursor c = bdd.getAllIndividu();
+        Intent intent = getIntent();
+        String info = intent.getStringExtra("Medicament");
+        String[] split = info.split("/");
+        Cursor c = bdd.getIndividuNonDosee(split[0]);
 
         String[] from = new String[]{AdaptaterBDD.COL_LIBELLE};
         int[] to = new int[]{R.id.nom_medoc};
@@ -88,6 +75,7 @@ public class Ajout_medoc2 extends ActionBarActivity {
             Dosage leDosage = new Dosage(id_medoc, id_indiv, qte.getText().toString(), unite.getText().toString(), duree.getText().toString());
             bdd.insererDosage(leDosage);
             Toast.makeText(this, "Dosage enregistré", Toast.LENGTH_LONG).show();
+            chargerSpinner();
             bdd.close();
         }
     }
