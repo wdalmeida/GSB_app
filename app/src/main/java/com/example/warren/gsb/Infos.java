@@ -1,8 +1,12 @@
 package com.example.warren.gsb;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
+import android.widget.TextView;
+
+import com.example.warren.gsb.bdd.AdaptaterBDD;
 
 
 public class Infos extends ActionBarActivity {
@@ -13,6 +17,17 @@ public class Infos extends ActionBarActivity {
         setContentView(R.layout.activity_infos);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
+
+        AdaptaterBDD bdd = new AdaptaterBDD(this);
+        bdd.open();
+
+        TextView prix = (TextView) findViewById(R.id.prixM);
+        prix.setText("Prix moyen des médicaments : " + bdd.getPrixMoyen() + "€");
+        Cursor cursor = bdd.getAllMedicament();
+        TextView nb = (TextView) findViewById(R.id.nbMedoc);
+        nb.setText("Nombres de médicament : " + cursor.getCount());
+        bdd.close();
+        cursor.close();
     }
 
     @Override

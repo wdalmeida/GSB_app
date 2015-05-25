@@ -130,6 +130,13 @@ public class AdaptaterBDD {
                 + " WHERE " + COL_ID + "='" + medoc + "');", null);
     }
 
+    public String getPrixMoyen() {
+        Cursor cursor = db.rawQuery("SELECT ROUND(AVG(" + COL_PRIX + "),2)"
+                + " FROM " + TABLE_MEDICAMENT, null);
+        cursor.moveToFirst();
+        return cursor.getString(0);
+    }
+
     public Cursor getUnDosage(String idMedoc, String idIndiv) {
         return db.rawQuery("SELECT m." + COL_NOM + ", i." + COL_LIBELLE
                 + ", " + COL_QTE + ", " + COL_UNITE + ", " + COL_DUREE

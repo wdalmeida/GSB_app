@@ -58,7 +58,7 @@
         </activity>
         <activity
             android:name=".Infos"
-            android:label="@string/title_activity_infos">
+            android:label="@string/title_activity_infos"
             android:parentActivityName=".MainActivity" >
         </activity>
         <activity

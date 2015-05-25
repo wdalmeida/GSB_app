@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.warren.gsb.bdd.AdaptaterBDD;
 
@@ -31,7 +30,6 @@ public class Liste_medoc extends ActionBarActivity {
         //On ouvre la base de données
         bdd.open();
         Cursor c = bdd.getAllMedicament();
-        Toast.makeText(getApplicationContext(), "il y a " + String.valueOf(c.getCount()) + " articles dans la BDD", Toast.LENGTH_LONG).show();
         // colonnes à afficher
         String[] columns = new String[]{AdaptaterBDD.COL_NOM, AdaptaterBDD.COL_COMP, AdaptaterBDD.COL_CONTRE, AdaptaterBDD.COL_EFFET, AdaptaterBDD.COL_PRIX};
         // champs dans lesquelles afficher les colonnes

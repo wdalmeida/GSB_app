@@ -17,6 +17,19 @@ public class MainActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setIcon(R.drawable.logo);
+
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Liste_medoc.class));
+            }
+        });
+        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Form_dosage.class));
+            }
+        });
     }
 
     @Override
@@ -39,20 +52,5 @@ public class MainActivity extends ActionBarActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    public void showMedoc(View view) {
-        Intent intent = new Intent(this, Liste_medoc.class);
-        startActivity(intent);
-    }
-
-    public void addMedoc(View view) {
-        Intent intent = new Intent(this, Ajout_medoc.class);
-        startActivity(intent);
-    }
-
-    public void showDrug(View view) {
-        Intent intent = new Intent(this, Form_dosage.class);
-        startActivity(intent);
     }
 }
