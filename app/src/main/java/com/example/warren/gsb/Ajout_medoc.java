@@ -21,13 +21,6 @@ public class Ajout_medoc extends ActionBarActivity {
         setContentView(R.layout.activity_ajout_medoc);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        findViewById(R.id.buttonNext).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Ajout_medoc.this, Ajout_medoc2.class));
-            }
-        });
-
     }
 
     @Override
@@ -38,7 +31,7 @@ public class Ajout_medoc extends ActionBarActivity {
     }
 
     public void add() {
-        if (!verifChamp()) {
+        // if (!verifChamp()) {
             EditText id = (EditText) findViewById(R.id.edit_medoc_id);
             EditText nom = (EditText) findViewById(R.id.edit_medoc_nom);
             EditText compo = (EditText) findViewById(R.id.edit_medoc_compo);
@@ -52,16 +45,17 @@ public class Ajout_medoc extends ActionBarActivity {
             bdd.insererMedicament(leMedoc);
             Toast.makeText(this, "Médicament :" + leMedoc.getNom() + " ajouté", Toast.LENGTH_LONG).show();
             bdd.close();
-        }
+        //}
     }
 
-    public void next() {
+    public void next(View view) {
         if (!verifChamp()) {
             EditText id = (EditText) findViewById(R.id.edit_medoc_id);
             EditText nom = (EditText) findViewById(R.id.edit_medoc_nom);
             add();
             Intent intent = new Intent(this, Ajout_medoc2.class);
             intent.putExtra("Medicament", id.getText() + "/" + nom.getText());
+            startActivity(intent);
         }
     }
 

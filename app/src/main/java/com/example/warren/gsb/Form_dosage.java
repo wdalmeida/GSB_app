@@ -29,14 +29,7 @@ public class Form_dosage extends ActionBarActivity {
         spinnerMedoc(bdd);
         spinnerIndiv(bdd);
         bdd.close();
-        findViewById(R.id.button_dosage).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Form_dosage.this, Voir_dosage.class));
-            }
-        });
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -81,7 +74,7 @@ public class Form_dosage extends ActionBarActivity {
         spinner.setAdapter(dataAdapter);
     }
 
-    public void voirDosage() {
+    public void voirDosage(View view) {
 
         Spinner medoc = (Spinner) findViewById(R.id.spinner_medoc);
         Spinner indiv = (Spinner) findViewById(R.id.spinner_indiv);
@@ -91,9 +84,10 @@ public class Form_dosage extends ActionBarActivity {
         String idmedoc = cursor1.getString(cursor1.getColumnIndex(AdaptaterBDD.COL_ID));
         String idindiv = cursor2.getString(cursor2.getColumnIndex(AdaptaterBDD.COL_CODE));
 
-        //Intent intent = new Intent(this, Voir_dosage.class);
-        //intent.putExtra("Medoc", idmedoc);
-        //intent.putExtra("Indiv", idindiv);
+        Intent intent = new Intent(this, Voir_dosage.class);
+        intent.putExtra("Medoc", idmedoc);
+        intent.putExtra("Indiv", idindiv);
+        startActivity(intent);
 
     }
 }

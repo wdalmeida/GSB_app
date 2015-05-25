@@ -74,8 +74,8 @@ public class Liste_medoc extends ActionBarActivity {
                 Intent intent = new Intent(this, Ajout_medoc.class);
                 startActivity(intent);
                 return true;
-            case R.id.action_search:
-                return true;
+           /* case R.id.action_search:
+                return true;*/
             default:
                 return super.onOptionsItemSelected(item);
         }

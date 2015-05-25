@@ -75,8 +75,14 @@ public class Ajout_medoc2 extends ActionBarActivity {
             Dosage leDosage = new Dosage(id_medoc, id_indiv, qte.getText().toString(), unite.getText().toString(), duree.getText().toString());
             bdd.insererDosage(leDosage);
             Toast.makeText(this, "Dosage enregistré", Toast.LENGTH_LONG).show();
-            chargerSpinner();
-            bdd.close();
+            Cursor c = bdd.getIndividuNonDosee(split[0]);
+            if (c.getCount() > 0) {
+                chargerSpinner();
+                bdd.close();
+            } else {
+                bdd.close();
+                startActivity(new Intent(Ajout_medoc2.this, MainActivity.class));
+            }
         }
     }
 
